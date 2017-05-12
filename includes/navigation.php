@@ -22,7 +22,6 @@
           <?php while($child = mysqli_fetch_assoc($childquery)) :?>
          <li><a href="#"><?php echo $child['categories_category']; ?></a></li>
        <?php endwhile; ?>
-
       </li>
     </ul>
      <?php endwhile; ?>
