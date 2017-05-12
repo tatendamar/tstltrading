@@ -18,9 +18,9 @@
          </div>
          <div class="col-sm-6">
            <h4>Details</h4>
-            <p>comment on the Products</p>
+            <p>Products</p>
             <hr>
-            <p>Price: $0.00</p>
+            <p class="price">Price: $0.00</p>
             <p>Type:Of chemicals</p>
             <form action="add_cart.php" method="post">
               <div class="form-group">

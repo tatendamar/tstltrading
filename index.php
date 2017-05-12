@@ -6,7 +6,7 @@
  include 'includes/leftside.php';
 
  $sql = "SELECT * FROM products WHERE featured = 1";
- $featured = $db ->query($sql);
+ $featured = $db->query($sql);
  ?>
 
     <!--main content-->
@@ -16,72 +16,16 @@
          <?php while($product = mysqli_fetch_assoc($featured)) : ?>
           <div class="col-md-3 text-center">
             <h4><?php echo $product ['product_title']; ?></h4>
-            <img src="<?php echo $product['product_image']; ?>" alt="<?php echo ['product_title']; ?>" class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s><?php echo $product['product_list_price']; ?></s></p>
-            <p class="price">Our Price: <?php echo $product ['product_price']; ?></p>
+            <img src="<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-thumb" />
+            <p class="list-price text-danger">List Price: <s>$<?php echo $product['product_list_price']; ?></s></p>
+            <p class="price">Our Price:$<?php echo $product ['product_price']; ?></p>
             <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
           </div>
         <?php endwhile; ?>
-
-          <!--<div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-           </div>
-
-          <div class="col-md-3">
-            <h4>Chemicals</h4>
-            <img src="#" alt="tslprod"  class="img-thumb" />
-            <p class="list-price text-danger">List Price: <s>$0.00</s></p>
-            <p class="price">Our Price: $0.00</p>
-            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#details-1">Details</button>
-          </div>-->
       </div>
     </div>
   <!--right side bar -->
-   <div class="col-md-2">Right Side Bar</div>
+  <div class="col-md-2">Right Side Bar</div>
 
  </div><br><br>
 <footer class="text-center" id="footer">&copy; Copyright 2017 TSL TRADING</foooter>
