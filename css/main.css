@@ -1,0 +1,41 @@
+body{
+  padding-top: 50px;
+}
+
+#headerWrapper{
+  position: relative;
+  padding:0;
+  margin:0;
+  overflow: hidden;
+  height:600px;
+  background-image: url(../images/BSTW2637.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 800px;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+#logotext h1{
+  top: 50%;
+  margin-top: 180px;
+  font-size: 55px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: lightgreen;
+}
+
+/*main*/
+.img-thumb{
+  width: auto;
+  height: 200px;
+}
+
+img.details{
+width: 33%;
+margin: 15px auto;
+}
+
+/*footer*/
+#footer{
+  margin-top: 80px;
+}
