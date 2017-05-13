@@ -9,6 +9,10 @@ $(window).scroll(function() {
      "transform" : "translate(0px, "vscroll/2+"px)"
    });
 });
+
+function detailsmodal(){
+  alert("ist")
+}
 </script>
 </body>
 </html>
