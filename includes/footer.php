@@ -6,13 +6,26 @@
 $(window).scroll(function() {
    var vscroll = $(this).scrollTop();
    $('#logotext').css({
-     "transform" : "translate(0px, "vscroll/2+"px)"
+     "transform" : "translate(0px, "+vscroll/2+"px)"
    });
 });
 
-function detailsmodal(){
-  alert("ist")
-}
+function detailsmodal(product_id){
+  var data = {"product_id": product_id};
+  $.ajax({
+    url: <?php echo BASEURL; ?>+'includes/detailsmodal.php',
+    method: "post",
+    data :data,
+    success: function(){
+      $('body').append(data);
+      $('#details-1').modal('toggle');
+    },
+    error: function(){
+      alert("Something is not right")
+    }
+  });
+};
+
 </script>
 </body>
 </html>

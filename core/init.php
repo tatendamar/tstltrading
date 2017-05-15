@@ -4,3 +4,5 @@
     echo 'Database connection failed with following errors: '. mysqli_connect_error();
     die();
   }
+
+  define('BASEURL', '/series2/');

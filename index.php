@@ -19,14 +19,14 @@
             <img src="<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-thumb" />
             <p class="list-price text-danger">List Price: <s>$<?php echo $product['product_list_price']; ?></s></p>
             <p class="price">Our Price:$<?php echo $product ['product_price']; ?></p>
-            <button type="button" class="btn btn-sm btn-success" onclick="detailsmodal()">Details</button>
+            <button type="button" class="btn btn-sm btn-success" onclick="detailsmodal(<?php $product['product_id']; ?>)">Details</button>
           </div>
         <?php endwhile; ?>
       </div>
     </div>
 
     <?php
-    //  include 'includes/detailsmodal.php';
+      //include 'includes/detailsmodal.php';
       include 'includes/rightside.php';
       include 'includes/footer.php';
      ?>
