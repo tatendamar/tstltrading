@@ -39,3 +39,9 @@ margin: 15px auto;
 #footer{
   margin-top: 80px;
 }
+
+/*admin*/
+.table-auto{
+  width: auto;
+  margin: 0 auto;
+}

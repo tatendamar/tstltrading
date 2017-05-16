@@ -5,23 +5,25 @@ $id = (int)$id;
 $sql = "SELECT * FROM products WHERE = '$id'";
 $result = $db->query($sql);
 $product = mysqli_fetch_assoc($result);
-$brand_id1 = $product['brand'];
-$sql = "SELECT brand FROM brand WHERE product_id = '$brand_id1'";
-$brand_query = $db->query($sql);
+$brand_id1 = $product['product_brand'];
+$sql2 = "SELECT brand_brand FROM brand WHERE brand_id = '$brand_id1'";
+$brand_query = $db->query($sql2);
 $brand = mysqli_fetch_assoc($brand_query);
 $sizestr = $product['sizes'];
+$size_exp = explode(',', $sizestr);
 ?>
 
 <!--modal-->
 <?php ob_start(); ?>
-<div class="modal fade details-1" id="details-1" tabindex="-1" role="dialog" aria-labelledby="details-1" aria-hidden="true">
+<div class="modal fade details-1" id="details-modal" tabindex="-1" role="dialog" aria-labelledby="details-1" aria-hidden="true">
  <div class="modal-dialog modal-lg">
    <div class="modal-content">
    <div class="modal-header">
-     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+     <button class="close" type="button" onclick="closeModal()" aria-label="Close">
        <span aria-hidden="true">&times;</span>
      </button>
      <h4 class="modal-tittle text-center"><?php echo $product['product_title']; ?></h4>
+     <?php var_dump($size_exp); ?>
    </div>
    <div class="modal-body">
      <div class="container-fluid">
@@ -36,7 +38,7 @@ $sizestr = $product['sizes'];
             <p><?php echo $product['product_description']; ?></p>
             <hr>
             <p class="price"><?php echo $product['product_price']; ?></p>
-            <p>Brand:<?php echo $brand['brand']</p>
+            <p>Brand:<?php echo $brand['brand_brand']; ?></p>
             <form action="add_cart.php" method="post">
               <div class="form-group">
                 <div class="col-xs-3">
@@ -49,9 +51,12 @@ $sizestr = $product['sizes'];
                    <label for="range">Range:</label>
                    <select name="size" id="size" class="form-control">
                      <option value=""></option>
-                     <option value="28">28</option>
-                     <option value="29">29</option>
-                     <option value="30">30</option>
+                     <?php foreach($size_exp as $string){
+                       $string_exp = explode(':', $string);
+                       $size = $string_exp[0];
+                       $quantity = $string_exp[1];
+                       echo '<option value="'.$size.'">'.$size.' ('.$quantity.' Available)</option>';
+                     } ?>
                    </select>
                  </div>
             </form>
@@ -60,10 +65,19 @@ $sizestr = $product['sizes'];
      </div>
    </div>
    <div class="modal-footer">
-    <button class="btn btn-default" data-dismiss="modal">Close</button>
+    <button class="btn btn-default" onclick="closeModal()">Close</button>
     <button class="btn btn-warning" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button>
    </div>
  </div>
 </div>
 </div>
+<script>
+ function closeModal(){
+   $('#details-modal').modal('hide');
+   setTimeout(function(){
+     $('#details-modal').remove();
+     $('.modal-backdrop').remove();
+   },500);
+ }
+</script>
 <?php echo ob_get_clean(); ?>
