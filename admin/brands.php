@@ -1,11 +1,11 @@
 <?php
- require_once '../core/init.php';
- include 'includes/head.php';
- include 'includes/navigation.php';
- //brands from database
- $sql = "SELECT * FROM brand ORDER BY brand_brand";
- $results = $db->query($sql);
- $errors = array();
+   require_once '../core/init.php';
+   include 'includes/head.php';
+   include 'includes/navigation.php';
+   //brands from database
+   $sql = "SELECT * FROM brand ORDER BY brand_brand";
+   $results = $db->query($sql);
+   $errors = array();
 
  //edit brand
  if (isset($_GET['edit']) && !empty($_GET['edit'])){
@@ -16,14 +16,14 @@
    $dBrand = mysqli_fetch_assoc($edit_result);
  }
 
-//delete brand
-if (isset($_GET['delete']) && !empty($_GET['delete'])){
-$delete_id = (int)$_GET['delete'];
-$delete_id = sanitize($delete_id);
-$sql ="DELETE FROM brand WHERE brand_id = '$delete_id'";
-$db->query($sql);
-header('Location: brands.php');
-}
+      //delete brand
+      if (isset($_GET['delete']) && !empty($_GET['delete'])){
+      $delete_id = (int)$_GET['delete'];
+      $delete_id = sanitize($delete_id);
+      $sql ="DELETE FROM brand WHERE brand_id = '$delete_id'";
+      $db->query($sql);
+      header('Location: brands.php');
+      }
 
  //if add form submitted
  if(isset($_POST['add_submit'])){
@@ -80,6 +80,7 @@ header('Location: brands.php');
       </div>
     </form>
   </div><hr>
+
 
 <table class="table table-bordered table-striped table-auto table-condensed">
   <thead>
