@@ -23,7 +23,7 @@ $size_exp = explode(',', $sizestr);
        <span aria-hidden="true">&times;</span>
      </button>
      <h4 class="modal-tittle text-center"><?php echo $product['product_title']; ?></h4>
-     <?php var_dump($size_exp); ?>
+     <!--<?php var_dump($size_exp); ?>-->
    </div>
    <div class="modal-body">
      <div class="container-fluid">

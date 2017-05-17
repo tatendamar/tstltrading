@@ -13,7 +13,7 @@ $(window).scroll(function() {
 function detailsModal(product_id){
   var data = {"product_id" : product_id};
   $.ajax({
-    url: <?php echo BASEURL; ?>+'includes/detailsmodal.php',
+    url: '/series2/includes/detailsmodal.php',
     method : "post",
     data : data,
     success: function(data){
