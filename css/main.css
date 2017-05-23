@@ -25,7 +25,7 @@ body{
 }
 
 /*main*/
-.img-thumb{
+.img-thumb
   width: auto;
   height: 200px;
 }
@@ -44,4 +44,9 @@ margin: 15px auto;
 .table-auto{
   width: auto;
   margin: 0 auto;
+}
+
+#add-product-btn{
+  margin-top: -35px;
+
 }

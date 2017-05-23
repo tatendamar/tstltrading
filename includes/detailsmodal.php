@@ -2,7 +2,7 @@
 require_once '../core/init.php';
 $id = $_POST['product_id'];
 $id = (int)$id;
-$sql = "SELECT * FROM products WHERE = '$id'";
+$sql = "SELECT * FROM products WHERE product_id= '$id'";
 $result = $db->query($sql);
 $product = mysqli_fetch_assoc($result);
 $brand_id1 = $product['product_brand'];
